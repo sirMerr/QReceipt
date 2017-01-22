@@ -4,7 +4,7 @@ angular.module('starter')
 		$scope.username = AuthService.username();
 
 		$scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
-			var alertPopup = $ionicPopup.alert({
+			const alertPopup = $ionicPopup.alert({
 				title: 'Unauthorized!',
 				template: 'You are not allowed to access this resource.'
 			});
@@ -13,7 +13,7 @@ angular.module('starter')
 		$scope.$on(AUTH_EVENTS.notAuthenticated, function(event) {
 			AuthService.logout();
 			$state.go('login');
-			var alertPopup = $ionicPopup.alert({
+			const alertPopup = $ionicPopup.alert({
 				title: 'Session Lost!',
 				template: 'Sorry, You have to login again.'
 			});
@@ -33,7 +33,7 @@ angular.module('starter')
 				});
 				$scope.setCurrentUsername(data.username);
 			}, function(err) {
-				var alertPopup = $ionicPopup.alert({
+				const alertPopup = $ionicPopup.alert({
 					title: 'Login failed!',
 					template: 'Please check your credentials!'
 				});
@@ -51,6 +51,7 @@ angular.module('starter')
 				$scope.groups[i].items.push(i + '-' + j);
 			}
 		}
+
 		$scope.toggleGroup = function(group) {
 			if ($scope.isGroupShown(group)) {
 				$scope.shownGroup = null;
@@ -61,6 +62,7 @@ angular.module('starter')
 		$scope.isGroupShown = function(group) {
 			return $scope.shownGroup === group;
 		};
+
 		$scope.logout = function() {
 			AuthService.logout();
 			$state.go('login');
