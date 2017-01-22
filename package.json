@@ -4,12 +4,15 @@
   "description": "QReceipt: An Ionic project",
   "dependencies": {
     "angular-mocks": "^1.6.1",
+    "body-parser": "^1.16.0",
+    "cors": "^2.8.1",
     "express": "^4.14.0",
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
     "gulp-minify-css": "^0.3.0",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^2.0.4",
+    "moment": "^2.17.1",
     "mongodb": "^2.2.21",
     "mongoose": "^4.7.7",
     "xo": "^0.17.1"
@@ -17,7 +20,8 @@
   "devDependencies": {
     "bower": "^1.8.0",
     "gulp-util": "^2.2.14",
-    "shelljs": "^0.3.0"
+    "shelljs": "^0.3.0",
+    "xo": "^0.17.1"
   },
   "cordovaPlugins": [
     "cordova-plugin-whitelist",
@@ -34,5 +38,21 @@
       "version": "",
       "locator": "ios"
     }
-  ]
+  ],
+  "scripts": {
+    "test": "xo"
+  },
+  "xo": {
+    "esnext": true,
+    "rules": {
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "curly": [
+        "error",
+        "multi-line"
+      ]
+    }
+  }
 }
