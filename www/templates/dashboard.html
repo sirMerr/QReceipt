@@ -1,187 +1,55 @@
+<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 <style>
-    .invoice-box{
-        max-width:800px;
-        margin:auto;
-        padding:30px;
-        border:1px solid #eee;
-        box-shadow:0 0 10px rgba(0, 0, 0, .15);
-        font-size:16px;
-        line-height:24px;
-        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-        color:#555;
-    }
+	body {
+		cursor: url('http://ionicframework.com/img/finger.png'), auto;
+	}
+	/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
 
-    .invoice-box table{
-        width:100%;
-        line-height:inherit;
-        text-align:left;
-    }
+	.list .item.item-accordion {
+		line-height: 38px;
+		padding-top: 0;
+		padding-bottom: 0;
+		transition: 0.09s all linear;
+	}
 
-    .invoice-box table td{
-        padding:5px;
-        vertical-align:top;
-    }
+	.list .item.item-accordion.ng-hide {
+		line-height: 0px;
+	}
 
-    .invoice-box table tr td:nth-child(2){
-        text-align:right;
-    }
+	.list .item.item-accordion.ng-hide-add,
+	.list .item.item-accordion.ng-hide-remove {
+		display: block !important;
+	}
+</style>
 
-    .invoice-box table tr.top table td{
-        padding-bottom:20px;
-    }
-
-    .invoice-box table tr.top table td.title{
-        font-size:45px;
-        line-height:45px;
-        color:#333;
-    }
-
-    .invoice-box table tr.information table td{
-        padding-bottom:40px;
-    }
-
-    .invoice-box table tr.heading td{
-        background:#eee;
-        border-bottom:1px solid #ddd;
-        font-weight:bold;
-    }
-
-    .invoice-box table tr.details td{
-        padding-bottom:20px;
-    }
-
-    .invoice-box table tr.item td{
-        border-bottom:1px solid #eee;
-    }
-
-    .invoice-box table tr.item.last td{
-        border-bottom:none;
-    }
-
-    .invoice-box table tr.total td:nth-child(2){
-        border-top:2px solid #eee;
-        font-weight:bold;
-    }
-		.total {
-			background: #96ffcf;
-		}
-
-    @media only screen and (max-width: 600px) {
-        .invoice-box table tr.top table td{
-            width:100%;
-            display:block;
-            text-align:center;
-        }
-
-        .invoice-box table tr.information table td{
-            width:100%;
-            display:block;
-            text-align:center;
-        }
-    }
-    </style>
 <ion-view ng-controller="BarcodeCtrl" view-title="Dashboard" name="dashboard-view">
-  <ion-nav-buttons side="right">
-    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
-  </ion-nav-buttons>
-  <ion-floating-button  click="scanBarcode()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" icon-color="#fff">
-  </ion-floating-button>
-  <ion-content class="padding" >
-    <div class="row"><div class="col text-center">
-      <h3 class="title">Welcome {{username}}!</h3>
+	<ion-nav-buttons side="right">
+		<button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+	</ion-nav-buttons>
+	<ion-floating-button click="scanBarcode()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" icon-color="#fff">
+	</ion-floating-button>
+	<ion-content class="padding">
+		<div class="row">
+			<div class="col text-center">
+				<h3 class="title">Welcome {{username}}!</h3>
 
-    <div id="container-speed" style="width: 300px; height: 200px; float: center"></div>
+				<div id="container-speed" style="width: 300px; height: 200px; float: center"></div>
 
-		<div class="invoice-box">
-			<table cellpadding="0" cellspacing="0">
-					<tr class="top">
-							<td colspan="2">
-									<table>
-											<tr>
-													<td>
-															Receipt #: 123<br>
-															Created: January 21, 2016<br>
-													</td>
-											</tr>
-									</table>
-							</td>
-					</tr>
+				<ion-list>
+					<div ng-repeat="group in groups">
+						<ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+							<i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; Group {{group.name}}
+						</ion-item>
+						<ion-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+							{{item}}
+						</ion-item>
+					</div>
+				</ion-list>
 
-					<tr class="information">
-							<td colspan="2">
-									<table>
-											<tr>
-													<td>
-															Next Step Webs, Inc.<br>
-															12345 Sunny Road<br>
-															Sunnyville, TX 12345
-													</td>
-
-													<td>
-															Acme Corp.<br>
-															John Doe<br>
-															john@example.com
-													</td>
-											</tr>
-									</table>
-							</td>
-					</tr>
-
-					<tr class="heading">
-							<td>
-									Credit Card
-							</td>
-					</tr>
-
-					<tr class="details">
-							<td>
-									**** **** **** 232
-							</td>
-					</tr>
-
-					<tr class="heading">
-							<td>
-									Item
-							</td>
-					</tr>
-
-					<tr class="item">
-							<td>
-									Website design
-							</td>
-
-							<td>
-									<br>--- $300.00
-							</td>
-					</tr>
-
-					<tr class="item">
-							<td>
-									Host (3 months)
-							</td>
-
-							<td>
-									<br>--- $75.00
-							</td>
-					</tr>
-
-					<tr class="item last">
-							<td>
-									Domain  (1 year)
-							</td>
-
-							<td>
-							<br>--- $10.00
-							</td>
-					</tr>
-
-					<tr class="total">
-							<td>
-								 <b>Total</b>: $385.00
-							</td>
-					</tr>
-			</table>
-	</div>
-    </div></div>
-  </ion-content>
+			</div>
+		</div>
+	</ion-content>
 </ion-view>

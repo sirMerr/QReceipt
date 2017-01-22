@@ -39,6 +39,28 @@ angular.module('starter')
   };
 })
 .controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+	$scope.groups = [];
+  for (var i=0; i<10; i++) {
+    $scope.groups[i] = {
+      name: i,
+      items: []
+    };
+    for (var j=0; j<3; j++) {
+      $scope.groups[i].items.push(i + '-' + j);
+    }
+	}
+
+	$scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+  
   $scope.logout = function() {
     AuthService.logout();
     $state.go('login');
