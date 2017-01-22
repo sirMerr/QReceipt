@@ -36,9 +36,9 @@ QReceipt is easy to set up in stores, and faster to send receipts than printing 
 
 ## Team
 
-[![Tiffany Le-Nguyen](https://s.gravatar.com/avatar/5ff6912552de8e7e2770b7c7005e62f2?s=140)](https://github.com/sirMerr) | [![Mohammed](https://robohash.org/imbaky)](https://github.com/imbaky) | [![Naziba](https://robohash.org/naziba)](https://github.com/naz321)
+[![Tiffany Le-Nguyen](https://s.gravatar.com/avatar/5ff6912552de8e7e2770b7c7005e62f2?s=140)](https://github.com/sirMerr) | [![Mohamed Abdel Baky](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/user_photos/000/213/773/datas/profile.jpg)](https://github.com/imbaky) | [![Naziba](https://robohash.org/naziba)](https://github.com/naz321)
 ---|---|---
-[Tiffany Le-Nguyen](https://github.com/sirMerr) | [Mohammed](https://github.com/imbaky) | [Naziba](https://github.com/naz321)
+[Tiffany Le-Nguyen](https://github.com/sirMerr) | [Mohamed Abdel Baky](https://github.com/imbaky) | [Naziba](https://github.com/naz321)
 
 
 ## License
