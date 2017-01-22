@@ -13,3 +13,8 @@
 .button .button-full .button-positive{
   background-color: #2AC9AA;
 }
+
+.highcharts-yaxis-grid .highcharts-grid-line {
+	display: none;
+  
+}
