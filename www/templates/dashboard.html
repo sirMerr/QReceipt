@@ -1,3 +1,85 @@
+<style>
+    .invoice-box{
+        max-width:800px;
+        margin:auto;
+        padding:30px;
+        border:1px solid #eee;
+        box-shadow:0 0 10px rgba(0, 0, 0, .15);
+        font-size:16px;
+        line-height:24px;
+        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;
+    }
+
+    .invoice-box table{
+        width:100%;
+        line-height:inherit;
+        text-align:left;
+    }
+
+    .invoice-box table td{
+        padding:5px;
+        vertical-align:top;
+    }
+
+    .invoice-box table tr td:nth-child(2){
+        text-align:right;
+    }
+
+    .invoice-box table tr.top table td{
+        padding-bottom:20px;
+    }
+
+    .invoice-box table tr.top table td.title{
+        font-size:45px;
+        line-height:45px;
+        color:#333;
+    }
+
+    .invoice-box table tr.information table td{
+        padding-bottom:40px;
+    }
+
+    .invoice-box table tr.heading td{
+        background:#eee;
+        border-bottom:1px solid #ddd;
+        font-weight:bold;
+    }
+
+    .invoice-box table tr.details td{
+        padding-bottom:20px;
+    }
+
+    .invoice-box table tr.item td{
+        border-bottom:1px solid #eee;
+    }
+
+    .invoice-box table tr.item.last td{
+        border-bottom:none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2){
+        border-top:2px solid #eee;
+        font-weight:bold;
+    }
+		.total {
+			background: #96ffcf;
+		}
+
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+
+        .invoice-box table tr.information table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+    }
+    </style>
 <ion-view ng-controller="BarcodeCtrl" view-title="Dashboard" name="dashboard-view">
   <ion-nav-buttons side="right">
     <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
@@ -7,23 +89,99 @@
   <ion-content class="padding" >
     <div class="row"><div class="col text-center">
       <h3 class="title">Welcome {{username}}!</h3>
-      This could be your Dashboard.
 
     <div id="container-speed" style="width: 300px; height: 200px; float: center"></div>
 
-      <br><br><br>
-      <button class="button button-full button-positive" ng-click="performValidRequest()">
-        Make Valid Request
-      </button>
-      <button class="button button-full button-energized" ng-click="performUnauthorizedRequest()">
-        Make Request for unauthorized resource
-      </button>
-      <button class="button button-full button-assertive" ng-click="performInvalidRequest()">
-        Make Request without valid token
-      </button>
+		<div class="invoice-box">
+			<table cellpadding="0" cellspacing="0">
+					<tr class="top">
+							<td colspan="2">
+									<table>
+											<tr>
+													<td>
+															Receipt #: 123<br>
+															Created: January 21, 2016<br>
+													</td>
+											</tr>
+									</table>
+							</td>
+					</tr>
 
-      <br><br>
-      {{response}}
+					<tr class="information">
+							<td colspan="2">
+									<table>
+											<tr>
+													<td>
+															Next Step Webs, Inc.<br>
+															12345 Sunny Road<br>
+															Sunnyville, TX 12345
+													</td>
+
+													<td>
+															Acme Corp.<br>
+															John Doe<br>
+															john@example.com
+													</td>
+											</tr>
+									</table>
+							</td>
+					</tr>
+
+					<tr class="heading">
+							<td>
+									Credit Card
+							</td>
+					</tr>
+
+					<tr class="details">
+							<td>
+									**** **** **** 232
+							</td>
+					</tr>
+
+					<tr class="heading">
+							<td>
+									Item
+							</td>
+					</tr>
+
+					<tr class="item">
+							<td>
+									Website design
+							</td>
+
+							<td>
+									<br>--- $300.00
+							</td>
+					</tr>
+
+					<tr class="item">
+							<td>
+									Host (3 months)
+							</td>
+
+							<td>
+									<br>--- $75.00
+							</td>
+					</tr>
+
+					<tr class="item last">
+							<td>
+									Domain  (1 year)
+							</td>
+
+							<td>
+							<br>--- $10.00
+							</td>
+					</tr>
+
+					<tr class="total">
+							<td>
+								 <b>Total</b>: $385.00
+							</td>
+					</tr>
+			</table>
+	</div>
     </div></div>
   </ion-content>
 </ion-view>
