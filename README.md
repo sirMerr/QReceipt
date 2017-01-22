@@ -10,7 +10,8 @@ When you start our app, you will see a login screen. Simply enter your provided 
 You will then be directed to your dashboard, where you can see how much you have spent in or over your budget and a list of receipts.    
 <img alt="Dashboard Screen" src="http://i.imgur.com/hZL8KwG.png" width="300">    
 Use the <b>+</b> badge to scan a QR Code and add the receipt to your list.    
-In your profile, you can set your budget and name.
+In your profile, you can set your budget and name.    
+<img alt="Dashboard Screen" src="http://i.imgur.com/p4047R5.png" width="400">   
 
 ## Why QReceipt?
 
