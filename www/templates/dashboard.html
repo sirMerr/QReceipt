@@ -7,13 +7,13 @@
 	<ion-content class="padding">
 		<div class="row">
 			<div class="col text-center">
-				<h3 class="title">Welcome {{username}}!</h3> This is your budget.
+				<h3 class="title">Welcome {{username}}!</h3> Here is your budget and receipts.
 
 				<div id="container-speed" style="width: 300px; height: 200px; float: center"></div>
 				<ion-list>
 					<div ng-repeat="group in groups">
 						<ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
-							<i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; Group {{group.name}}
+							<i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; {{group.name}}
 						</ion-item>
 						<ion-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">
 							{{item}}

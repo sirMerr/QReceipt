@@ -41,14 +41,26 @@ angular.module('starter')
 		};
 	})
 	.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
-		$scope.groups = [];
-		for (var i = 0; i < 10; i++) {
-			$scope.groups[i] = {
-				name: i,
-				items: []
-			};
-			for (var j = 0; j < 3; j++) {
-				$scope.groups[i].items.push(i + '-' + j);
+		const sampleItems = ['Domain', 'Hosting', 'Web Design', 'Cake', 'Books', 'Paper', 'Shirt'];
+		const samplePrices = ['$10.00', '$20.00', '$30.00', '$40.00', '$50.00', '$60.00', '$70.00', '$80.00'];
+		$scope.groups = [{
+			name: 'NameCheap',
+			items: []
+		}, {
+			name: 'Loblaws',
+			items: []
+		}, {
+			name: 'Paper Store',
+			items: []
+		}];
+		for (var i = 0; i < 3; i++) {
+			// $scope.groups[i] = {
+			// 	name: i,
+			// 	items: []
+			// };
+			for (var j = 1; j < 4; j++) {
+				const random = Math.round(Math.random() * 6);
+				$scope.groups[i].items.push(j + '. ' + sampleItems[random] + ' ------ ' + samplePrices[random]);
 			}
 		}
 
