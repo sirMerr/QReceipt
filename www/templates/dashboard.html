@@ -1,9 +1,10 @@
-<ion-view view-title="Dashboard" name="dashboard-view">
+<ion-view ng-controller="BarcodeCtrl" view-title="Dashboard" name="dashboard-view">
   <ion-nav-buttons side="right">
     <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
   </ion-nav-buttons>
-
-  <ion-content class="padding" ng-controller="BarcodeCtrl">
+  <ion-floating-button  click="scanBarcode()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" icon-color="#fff">
+  </ion-floating-button>
+  <ion-content class="padding" >
     <div class="row"><div class="col text-center">
       <h3 class="title">Welcome {{username}}!</h3>
       This could be your Dashboard.
@@ -17,9 +18,7 @@
       <button class="button button-full button-assertive" ng-click="performInvalidRequest()">
         Make Request without valid token
       </button>
-      <button class="button button-full button-assertive" ng-click="scanBarcode()">
-        Scan QR
-      </button>
+
       <br><br>
       {{response}}
     </div></div>
