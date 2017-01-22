@@ -46,24 +46,15 @@ angular.module('starter')
 		const sampleStores = ['BurgerKing','McDonalds','Pharmaprix','Tim Hortons','Concordia University','BestBuy', 'Canadian Computers'];
 		$scope.groups = [{
 			name: 'NameCheap',
-			items: []
+			items: [1 + '. ' + 'Hosting' + ' ------ ' + samplePrices[Math.round(Math.random() * 6)],2 + '. ' + 'Domain Name' + ' ------ ' + samplePrices[Math.round(Math.random() * 6)]]
 		}, {
 			name: 'Loblaws',
-			items: []
+			items: [1 + '. ' + 'Meat' + ' ------ ' + samplePrices[Math.round(Math.random() * 6)]]
 		}, {
 			name: 'Paper Store',
-			items: []
+			items: [1 + '. ' + 'Printer ink' + ' ------ ' + samplePrices[Math.round(Math.random() * 6)]]
 		}];
-		for (var i = 0; i < 3; i++) {
-			// $scope.groups[i] = {
-			// 	name: i,
-			// 	items: []
-			// };
-			for (var j = 1; j < 4; j++) {
-				const random = Math.round(Math.random() * 6);
-				$scope.groups[i].items.push(j + '. ' + sampleItems[random] + ' ------ ' + samplePrices[random]);
-			}
-		}
+
 		$scope.$on('SOME_TAG', function(response) {
 			const random = Math.round(Math.random() * 6);
 		      $scope.groups.push({
