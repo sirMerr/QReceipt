@@ -1,0 +1,87 @@
+[33mcommit cc38b640c534309095ddc3836e3e347855894edc[m
+Author: Tiffany Le-Nguyen <letiffany.nguyen@gmail.com>
+Date:   Sun Jan 22 03:01:45 2017 -0500
+
+    :wrench: Change to Accordion list
+
+[33mcommit 467aa4bfe0e30b2b8497a40bcfa0c0e72aaa8a8b[m
+Author: Tiffany Le-Nguyen <letiffany.nguyen@gmail.com>
+Date:   Sun Jan 22 02:40:49 2017 -0500
+
+    :tada: Add receipt sample
+
+[33mcommit 7137c3ab000d546f9be33fd8056f0bc8a3ef71f7[m
+Author: pǝɯɐɥoɯ <mo7_abd@hotmail.com>
+Date:   Sun Jan 22 02:20:33 2017 -0500
+
+    Basic gauge
+
+[33mcommit e0af2ee646c90862b03d3facb4283f64a9d129d8[m
+Author: pǝɯɐɥoɯ <mo7_abd@hotmail.com>
+Date:   Sun Jan 22 01:50:18 2017 -0500
+
+    Array qr code
+
+[33mcommit 3a5846b5b11e3cd4117fd1d27d3d9cd16d544f0a[m
+Author: pǝɯɐɥoɯ <mo7_abd@hotmail.com>
+Date:   Sun Jan 22 01:14:43 2017 -0500
+
+    change menu color
+
+[33mcommit 445e25b061f7ec6962d99cf910ec14694cfb0147[m
+Author: pǝɯɐɥoɯ <mo7_abd@hotmail.com>
+Date:   Sun Jan 22 00:53:29 2017 -0500
+
+    Added floating button
+
+[33mcommit ba3022554f727c9abb10de487a8f0afefd9febd6[m
+Author: pǝɯɐɥoɯ <mo7_abd@hotmail.com>
+Date:   Sun Jan 22 00:18:43 2017 -0500
+
+    fixed resources and added basic QR code
+
+[33mcommit 43f7751fcc23c7d738961c18905e96397025214d[m
+Author: pǝɯɐɥoɯ <mo7_abd@hotmail.com>
+Date:   Sun Jan 22 00:05:29 2017 -0500
+
+    Logo
+
+[33mcommit 0dc0156277de3e3d77ec3e74c82121b828349cb7[m
+Merge: 2973b7a a2bd587
+Author: Naziba <Naziba@nazibas-mbp.wireless.concordia.ca>
+Date:   Sat Jan 21 23:49:49 2017 -0500
+
+    :tada: Add working login
+
+[33mcommit 2973b7a3a7e27696fdd7d64f029ba5a0780a1373[m
+Author: Naziba <Naziba@nazibas-mbp.wireless.concordia.ca>
+Date:   Sat Jan 21 23:11:38 2017 -0500
+
+    Add login
+
+[33mcommit a2bd5876391e5a60e508c822a7ee98c9563dd988[m
+Merge: c819c5e 998f005
+Author: Tiffany Le-Nguyen <letiffany.nguyen@gmail.com>
+Date:   Sat Jan 21 22:50:11 2017 -0500
+
+    Merge pull request #1 from sirMerr/mo-dev
+    
+    Logo and login form
+
+[33mcommit 998f005243197f9a29615d13864d69071bd7a268[m
+Author: pǝɯɐɥoɯ <mo7_abd@hotmail.com>
+Date:   Sat Jan 21 22:44:27 2017 -0500
+
+    Logo and login form
+
+[33mcommit c819c5e55eb9bc7120c19b7b08ed3e8304b862e4[m
+Author: Tiffany Le-Nguyen <letiffany.nguyen@gmail.com>
+Date:   Sat Jan 21 22:23:30 2017 -0500
+
+    :tada: Add database stuff
+
+[33mcommit 578e9d260ae07de8f74704f14e7cf4c2f31138ce[m
+Author: Tiffany Le-Nguyen <letiffany.nguyen@gmail.com>
+Date:   Sat Jan 21 21:58:29 2017 -0500
+
+    Initial Commit

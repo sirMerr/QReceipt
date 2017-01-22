@@ -103,12 +103,14 @@ const app = angular.module('starter', ['ionic', 'ngMockE2E', 'ngCordova', 'ion-f
 	});
 });
 
-app.controller('BarcodeCtrl', ($scope, $cordovaBarcodeScanner) => {
+app.controller('BarcodeCtrl', ($scope, $cordovaBarcodeScanner, $rootScope) => {
 $scope.list=[];
+
 	$scope.scanBarcode = function () {
 		$cordovaBarcodeScanner.scan().then(imageData => {
+			$rootScope.$broadcast('SOME_TAG', 'your value');
 			$scope.list.push(imageData.text);
-			alert($scope.list);
+			//alert($scope.list);
 			console.log('Barcode Format -> ' + imageData.format);
 			console.log('Cancelled -> ' + imageData.cancelled);
 		}, error => {

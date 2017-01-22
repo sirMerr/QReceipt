@@ -40,9 +40,10 @@ angular.module('starter')
 			});
 		};
 	})
-	.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
-		const sampleItems = ['Domain', 'Hosting', 'Web Design', 'Cake', 'Books', 'Paper', 'Shirt'];
+	.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService, $rootScope) {
+		const sampleItems = ['Burger', 'Happy Meal', 'Advil', 'Coffee', 'Books', 'SSD HD', '8GB Ram'];
 		const samplePrices = ['$10.00', '$20.00', '$30.00', '$40.00', '$50.00', '$60.00', '$70.00', '$80.00'];
+		const sampleStores = ['BurgerKing','McDonalds','Pharmaprix','Tim Hortons','Concordia University','BestBuy', 'Canadian Computers'];
 		$scope.groups = [{
 			name: 'NameCheap',
 			items: []
@@ -63,7 +64,13 @@ angular.module('starter')
 				$scope.groups[i].items.push(j + '. ' + sampleItems[random] + ' ------ ' + samplePrices[random]);
 			}
 		}
-
+		$scope.$on('SOME_TAG', function(response) {
+			const random = Math.round(Math.random() * 6);
+		      $scope.groups.push({
+						name: sampleStores[random],
+						items: [1+ '. ' + sampleItems[random] + ' ------ ' + samplePrices[random]]
+					});
+		})
 		$scope.toggleGroup = function(group) {
 			if ($scope.isGroupShown(group)) {
 				$scope.shownGroup = null;

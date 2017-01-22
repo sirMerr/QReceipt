@@ -1,0 +1,13 @@
+﻿Revert "Array qr code"
+
+This reverts commit e0af2ee646c90862b03d3facb4283f64a9d129d8.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   www/js/app.js
+#
+
